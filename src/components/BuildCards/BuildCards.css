@@ -1,0 +1,144 @@
+/***** CARDS: OVERALL *******************/
+
+.card {
+  position: relative;
+  text-align: left;
+  min-height: 80px;
+  margin-top: 8px;
+  padding: 12px;
+}
+.card i, .card b {
+  color: rgb(230, 228, 228);
+}
+.card i:hover {
+  color: rgb(168, 168, 168);
+}
+
+/* inactive card elements */
+.card > p {
+  position: relative;
+  color: #fff;
+  line-height: 1.2;
+  padding-bottom: 40px;
+  padding-right: 20px;
+}
+.card .fa-edit {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.thumbs-and-trash {
+  text-align: center;
+}
+.thumbs-and-trash i {
+  font-size: 100%;
+  margin-left: 16px;
+}
+.thumbs-and-trash .trash {
+  margin-right: 16px;
+}
+.thumbs-and-trash b {
+  margin-left: 2px;
+}
+.shift-arrows i.left {
+  left: 12px;
+}
+.shift-arrows i.right {
+  right: 16px;
+}
+.shift-arrows i {
+  position: absolute;
+  bottom: 12px;
+  font-size: 130%;
+}
+
+/* active card elements */
+.card-active i.trash {
+  float: right;
+  margin-top: 16px;
+}
+textarea {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 100%;
+  color: #fff;
+  line-height: 1.2;
+	overflow: scroll;
+  background-color: rgba(0,0,0,0);
+  resize: none;
+  margin-bottom: 19px;
+  border: 0 solid #fff;
+}
+
+/***** CARDS: WENT-WELL *******************/
+.went-well .card {
+  background-color: #908b10;
+}
+.went-well .card-active {
+  background-color: #68640c;
+}
+.went-well textarea:focus {
+  outline: 8px solid #908b10;
+  outline-offset: 4px;
+}
+.went-well textarea::placeholder {
+  color: #a39e12;
+}
+.went-well .card-active button {
+  color: rgb(230, 228, 228);
+  background-color: #a39e12;
+  border: 1px solid #a39e12;
+  padding: 8px 10px 4px 8px;
+}
+.went-well .card-active button:hover {
+  background-color: #68640c;
+}
+
+/***** CARDS: TO-IMPROVE *******************/
+.to-improve .card {
+  background-color: #cc3d3f;
+}
+.to-improve .card-active {
+  background-color: #932c2d;
+}
+.to-improve textarea:focus {
+  outline: 8px solid #cc3d3f;
+  outline-offset: 4px;
+}
+.to-improve textarea::placeholder {
+  color: #e24244;
+}
+.to-improve .card-active button {
+  color: rgb(230, 228, 228);
+  background-color: #e24244;
+  border: 1px solid #e24244;
+  padding: 8px 10px 4px 8px;
+}
+.to-improve .card-active button:hover {
+  background-color: #932c2d;
+}
+
+/***** CARDS: ACTION-ITEMS *******************/
+.action-items .card {
+  background-color: #a64883;
+}
+.action-items .card-active {
+  background-color: #78345f;
+}
+.action-items textarea:focus {
+  outline: 8px solid #a64883;
+  outline-offset: 4px;
+}
+.action-items textarea::placeholder {
+  color: #c4539a;
+}
+.action-items .card-active button {
+  color: rgb(230, 228, 228);
+  background-color: #c4539a;
+  border: 1px solid #c4539a;
+  padding: 8px 10px 4px 8px;
+}
+.action-items .card-active button:hover {
+  background-color: #78345f;
+}

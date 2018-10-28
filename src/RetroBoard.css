@@ -1,10 +1,10 @@
-/*** Retro Board Custom Styles ***/
-
 /***** OVERALL *******************/
 main {
   width: 100%;
 }
-.wrapper {
+
+/* centers content and restricts the width */
+.wrapper {    
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +27,9 @@ nav {
   font-family: 'Racing Sans One', cursive;
   letter-spacing: .05em;
 }
-.layout {
+
+/* layout toggler elements */
+.layout {    
   position: absolute;
   bottom: 10px;
   right: 20px;
@@ -44,7 +46,7 @@ nav {
 .layout i.fa-bars {
   color: rgb(112, 112, 112);
   font-size: 110%;
-  margin-left: 2px;
+  margin-left: 6px;
 }
 .layout i.fa-bars:hover {
   color: rgb(230, 228, 228);
@@ -56,185 +58,17 @@ nav {
 .layout-vert {
   transform: rotate(90deg);
 }
-.bigbars {
-  font-size: 300%;
-}
 
-/***** CARDS: OVERALL *******************/
-.flex-container {
+/* holds the columns of cards */
+.flex-container {    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 4px;
 }
-.column-3 {
-  text-align: center;
-  flex: 33.33%;
-  max-width: 33.33%;
-  padding: 0 4px;
-}
-.column-1 {
-  text-align: center;
-  flex: 100%;
-  max-width: 900px;
-  padding: 0 4px;
-}
-.flex-container h3 {
-  margin: 30px auto 10px;
-}
-.btn-add-card {
-  font-size: 120%;
-  color: rgb(143, 142, 142);
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 30px;
-  margin-top: 8px;
-  padding-top: 0;
-  border: 0 solid #fff;
-  background-color: rgb(230, 228, 228);
-}
-.card {
-  position: relative;
-  text-align: left;
-  min-height: 80px;
-  margin-top: 8px;
-  padding: 12px;
-}
-.card > p {
-  color: #fff;
-  line-height: 1.2;
-  padding-bottom: 40px;
-}
-.card-active > button {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  width: 70px;
-  height: 22px;
-  border: 0 solid rgb(168, 168, 168);
-}
-.card-active > button:hover {
-  background-color: rgb(168, 168, 168);
-}
-textarea {
-  width: 100%;
-  height: auto;
-  font-size: 100%;
-  color: #fff;
-  line-height: 1.2;
-	overflow: scroll;
-  background-color: rgba(0,0,0,0);
-  resize: none;
-  margin-bottom: 40px;
-  border: 0 solid #fff;
-}
-.card i, .card b {
-  color: rgb(230, 228, 228);
-}
-.card i:hover {
-  color: rgb(168, 168, 168);
-}
-.icons {
-  text-align: center;
-}
-.icons i {
-  font-size: 100%;
-  margin-left: 16px;
-}
-.icons .trash {
-  margin-right: 16px;
-}
-.icons b {
-  margin-left: 2px;
-}
-.shift-arrows i.left {
-  left: 12px;
-}
-.shift-arrows i.right {
-  right: 16px;
-}
-.shift-arrows i {
-  position: absolute;
-  bottom: 12px;
-  font-size: 130%;
-}
 
-/***** CARDS: WENT-WELL *******************/
-.went-well h3:before {
-  position: relative;
-  content: "\25A0";
-  font-size: 150%;
-  margin-right: 6px;
-  margin-bottom: 2px;
-  color: #908b10;
-}
-.went-well .card {
-  background-color: #908b10;
-}
-.went-well .card-active {
-  background-color: #68640c;
-}
-.went-well textarea:focus {
-  outline: 8px solid #908b10;
-  outline-offset: 4px;
-}
-.went-well textarea::placeholder {
-  color: #908b10;
-}
-
-/***** CARDS: TO-IMPROVE *******************/
-.to-improve h3:before {
-  position: relative;
-  content: "\25A0";
-  font-size: 150%;
-  margin-right: 6px;
-  margin-bottom: 2px;
-  color: #cc3d3f;
-}
-.to-improve .card {
-  background-color: #cc3d3f;
-}
-.to-improve .card-active {
-  background-color: #932c2d;
-}
-.to-improve textarea:focus {
-  outline: 8px solid #cc3d3f;
-  outline-offset: 4px;
-}
-.to-improve textarea::placeholder {
-  color: #cc3d3f;
-}
-
-/***** CARDS: ACTION-ITEMS *******************/
-.action-items h3:before {
-  position: relative;
-  content: "\25A0";
-  font-size: 150%;
-  margin-right: 6px;
-  margin-bottom: 2px;
-  color: #a64883;
-}
-.action-items .card {
-  background-color: #a64883;
-}
-.action-items .card-active {
-  background-color: #78345f;
-}
-.action-items textarea:focus {
-  outline: 8px solid #a64883;
-  outline-offset: 4px;
-}
-.action-items textarea::placeholder {
-  color: #a64883;
-}
-
-/***** RESPONSIVE CARD COLUMNS *******************/
+/***** RESPONSIVE *******************/
 @media (max-width: 900px) {
-  .column-3 {
-      flex: 100%;
-      max-width: 100%;
-  }
   .wrapper {
     max-width: 600px;
     margin-left: auto;
@@ -244,4 +78,3 @@ textarea {
     display: none;
   }
 }
-

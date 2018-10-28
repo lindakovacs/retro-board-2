@@ -1,0 +1,67 @@
+/***** COLUMNS: OVERALL *******************/
+
+/* styles for the flex container based on # of columns */
+.column-3 {
+  text-align: center;
+  flex: 33.33%;
+  max-width: 33.33%;
+  padding: 0 4px;
+}
+.column-1 {
+  text-align: center;
+  flex: 100%;
+  max-width: 900px;
+  padding: 0 4px;
+}
+
+/* category titles & Add buttons */
+.flex-container h3 {
+  margin: 30px auto 10px;
+}
+.btn-add-card {
+  font-size: 120%;
+  color: rgb(143, 142, 142);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  margin-top: 8px;
+  padding-top: 0;
+  border: 0 solid #fff;
+  background-color: rgb(230, 228, 228);
+}
+
+/* each category title's bullet point */
+.went-well h3:before {
+  position: relative;
+  content: "\25A0";
+  font-size: 150%;
+  margin-right: 6px;
+  margin-bottom: 2px;
+  color: #908b10;
+}
+.to-improve h3:before {
+  position: relative;
+  content: "\25A0";
+  font-size: 150%;
+  margin-right: 6px;
+  margin-bottom: 2px;
+  color: #cc3d3f;
+}
+.action-items h3:before {
+  position: relative;
+  content: "\25A0";
+  font-size: 150%;
+  margin-right: 6px;
+  margin-bottom: 2px;
+  color: #a64883;
+}
+
+/***** RESPONSIVE *******************/
+@media (max-width: 900px) {
+  .column-3 {
+      flex: 100%;
+      max-width: 100%;
+  }
+}
+
