@@ -59,7 +59,7 @@ class RetroBoard extends Component {
   editCard = (e, id) => {
     try {
       let newCards = this.state.cards, newUserInput; 
-      if (!(newCards.filter(card => card.isActive)===[])) { // throws an error if there's an active card already open
+      if (newCards.filter(card => card.isActive)[0]) { // throws an error if an active card already exists
         throw new Error("Please submit or close the active card before editing another card.");
       }                              
       newCards = newCards.map(card => {  

@@ -64,7 +64,8 @@ textarea {
   font-size: 100%;
   color: #fff;
   line-height: 1.2;
-	overflow: scroll;
+  overflow: hidden;
+  word-wrap: break-word;
   background-color: rgba(0,0,0,0);
   resize: none;
   margin-bottom: 19px;
