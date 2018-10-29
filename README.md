@@ -4,16 +4,12 @@ This app is designed for use within the retrospective phase of an app's developm
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. For more information about the React framework please vist https://reactjs.org/docs/getting-started.html
 
 ### Prerequisites
 
 1. Node v10.0.0+  - follow installation instructions at https://nodejs.org/en/download/
 2. Yarn v1.10.1+ (optional)  - from the terminal, type `npm install -g yarn`
-3. Normalize v8.0.0+  - from the terminal, type `npm install normalize.css`
-4. React v16.5.2+  - follow installation instructions for running React locally at https://reactjs.org/docs/getting-started.html
-5. React-Dom v16.5.2+
-6. React-Scripts v2.0.5
 
 ### Installing
 
