@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'normalize.css';
 import './RetroBoard.css';
 import BuildColumns from './components/BuildColumns/BuildColumns';
@@ -165,5 +166,9 @@ class RetroBoard extends Component {
     );
   }
 }
+
+RetroBoard.propTypes = { 
+  toggleLayout: PropTypes.func.isRequired,
+};
 
 export default RetroBoard;

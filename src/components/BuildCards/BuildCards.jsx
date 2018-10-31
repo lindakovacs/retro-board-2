@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './BuildCards.css';
 
 // -- loops through a category's cards in state and builds out a column --
@@ -46,7 +47,7 @@ function BuildCards(props) {
         >
           <p>{card.text}</p> 
           <i 
-            class="far fa-edit"
+            className="far fa-edit"
             onClick={e => props.editCard(e, card.id)}                // edits the comments of an inactive card
           ></i>
           <div className="thumbs-and-trash">
@@ -80,5 +81,19 @@ function BuildCards(props) {
     );
   });
 }
+
+BuildCards.propTypes = { 
+  categories: PropTypes.array.isRequired,
+  category: PropTypes.string.isRequired,
+  userInput: PropTypes.string.isRequired,
+  cards: PropTypes.array.isRequired, 
+  handleCommentChange: PropTypes.func.isRequired,
+  submitCard: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
+  editCard: PropTypes.func.isRequired,
+  deleteCard: PropTypes.func.isRequired,
+  shiftCard: PropTypes.func.isRequired,
+  thumbsCounter: PropTypes.func.isRequired
+};
 
 export default BuildCards;

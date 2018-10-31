@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BuildCards from '../BuildCards/BuildCards'
 import './BuildColumns.css';
 
-// -- builds the card grid --
+// -- builds the 3-column or 1-column template --
 function BuildColumns(props) {
-    // creates the categories array
     const categories = ["went-well", "to-improve", "action-items"];
 
-    // -- checks the layout property and prepares the layout orientation css class --
+    // -- prepares the layout orientation css class --
     let columnClass = props.layoutIsHorz ? "column-3" : "column-1";
 
     // -- loops through the categories and creates 3 columns --
@@ -21,7 +21,6 @@ function BuildColumns(props) {
           id={currentCategory}
           key={currentCategory} 
         >
-          {/* renders the category title & add button */}
           <h3>{catTitle}</h3>
           <button 
             className="btn-add-card"
@@ -32,21 +31,19 @@ function BuildColumns(props) {
 
           {/* Builds out the cards for each column */}
           <BuildCards 
+            {...props}
             categories={categories}
             category={currentCategory}
-            userInput={props.userInput}
-            cards={props.cards}
-            handleCommentChange={props.handleCommentChange}
-            submitCard={props.submitCard}
-            handleKeyDown={props.handleKeyDown}
-            editCard={props.editCard}
-            deleteCard={props.deleteCard}
-            shiftCard={props.shiftCard}
-            thumbsCounter={props.thumbsCounter}
           />
         </div>
       );
     });
 }
+
+BuildCards.propTypes = { 
+  layoutIsHorz: PropTypes.bool.isRequired,
+  categories: PropTypes.array.isRequired,
+  addCard: PropTypes.func.isRequired,
+};
 
 export default BuildColumns
