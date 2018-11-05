@@ -1,15 +1,3 @@
-/***** OVERALL *******************/
-main {
-  width: 100%;
-}
-
-/* centers content and restricts the width */
-.wrapper {    
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /***** NAVBAR *******************/
 nav {
   position: relative;
@@ -18,7 +6,7 @@ nav {
   width: 100%;
   padding: 10px;
   background-color: rgb(44, 44, 44);
-  background-image: url("./retro-diamond.jpg");
+  background-image: url("../../retro-diamond.jpg");
 }
 .logo-type {
   margin: auto;
@@ -57,24 +45,4 @@ nav {
 }
 .layout-vert {
   transform: rotate(90deg);
-}
-
-/* holds the columns of cards */
-.flex-container {    
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 4px;
-}
-
-/***** RESPONSIVE *******************/
-@media (max-width: 900px) {
-  .wrapper {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .layout h5 {
-    display: none;
-  }
 }

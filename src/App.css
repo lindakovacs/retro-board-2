@@ -1,0 +1,23 @@
+/***** OVERALL *******************/
+main {
+  width: 100%;
+}
+
+/* centers content and restricts the width */
+.wrapper {    
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/***** RESPONSIVE *******************/
+@media (max-width: 900px) {
+  .wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .layout h5 {
+    display: none;
+  }
+}

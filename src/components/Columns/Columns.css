@@ -1,5 +1,13 @@
 /***** COLUMNS: OVERALL *******************/
 
+/* holds the columns of cards */
+.flex-container {    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 4px;
+}
+
 /* styles for the flex container based on # of columns */
 .column-3 {
   text-align: center;
