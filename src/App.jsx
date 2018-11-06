@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import 'normalize.css';
 import './App.css';
 import Columns from './components/Columns/Columns';
@@ -155,6 +155,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <main>
         <Header
@@ -179,19 +180,19 @@ class App extends Component {
   }
 }
 
-// App.propTypes = { 
-//   layoutIsHorz: PropTypes.bool.isRequired,
-//   toggleLayout: PropTypes.func.isRequired, 
-//   userInput: PropTypes.string.isRequired,
-//   cards: PropTypes.array.isRequired,
-//   addCard: PropTypes.func.isRequired,
-//   handleCommentChange: PropTypes.func.isRequired,
-//   submitCard: PropTypes.func.isRequired,
-//   handleKeyDown: PropTypes.func.isRequired,
-//   editCard: PropTypes.func.isRequired,
-//   deleteCard: PropTypes.func.isRequired,
-//   shiftCard: PropTypes.func.isRequired,
-//   thumbsCounter: PropTypes.func.isRequired
-// };
+App.propTypes = { 
+  layoutIsHorz: PropTypes.bool.isRequired,
+  toggleLayout: PropTypes.func.isRequired, 
+  userInput: PropTypes.string.isRequired,
+  cards: PropTypes.array.isRequired,
+  addCard: PropTypes.func.isRequired,
+  handleCommentChange: PropTypes.func.isRequired,
+  submitCard: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
+  editCard: PropTypes.func.isRequired,
+  deleteCard: PropTypes.func.isRequired,
+  shiftCard: PropTypes.func.isRequired,
+  thumbsCounter: PropTypes.func.isRequired
+};
 
 export default App;
