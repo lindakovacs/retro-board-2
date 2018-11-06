@@ -22,9 +22,9 @@ describe('App component', () => {
     columns.props().addCard("went-well");
     columns = wrapper.update().find('Columns');
     expect(columns.props().cards).to.deep.equal([{category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1}]);
-    expect(columns.props().idCount).to.equal(2);
+    expect(wrapper.state().idCount).to.equal(2);
   });
-  it.only("throws an error if another card is already active", () => {
+  it("throws an error and issues an alert message if another card is already active", () => {
     const alertSpy = spy(window, 'alert');
     const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
     wrapper.setState({ cards: [card], userInput: "test" });
@@ -32,6 +32,13 @@ describe('App component', () => {
     const err = columns.props().addCard("went-well");
     expect(err).to.equal(undefined);
     expect(alertSpy.calledOnceWith("Please submit or close the active card before adding another card.")).to.equal(true);
+  });
+  it("throws an error if another card is already active", () => {
+    const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
+    wrapper.setState({ cards: [card], userInput: "test" });
+    let columns = wrapper.find('Columns');
+    const addCardFunc = columns.props().addCard;
+    expect(() => addCardFunc("went-well")).to.throw();
   });
 
   // tests submitCard
@@ -47,7 +54,7 @@ describe('App component', () => {
   });
 
   // tests handleKeyDown
-  it.only("produces same result as submitCard when 'Enter' key is pressed", () => {
+  it("produces same result as submitCard when 'Enter' key is pressed", () => {
     const e = { keyCode: 13, preventDefault: () => {} };
     const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
     wrapper.setState({ cards: [card], userInput: "test", idCount: 2 });

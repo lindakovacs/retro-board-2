@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Cards from '../Cards/Cards'
 import './Columns.css';
 
@@ -20,6 +20,7 @@ function Columns(props) {
             <h3>{catTitle}</h3>
             <button 
               className="btn-add-card"
+              title="Add a new card"
               onClick={() => props.addCard(currentCategory)}
             >
               <span><b>+</b></span>
@@ -37,11 +38,18 @@ function Columns(props) {
   );
 }
 
-// Columns.propTypes = { 
-//   // layoutIsHorz: PropTypes.bool.isRequired,
-//   // addCard: PropTypes.func.isRequired,
-//   // category: PropTypes.string.isRequired,
-//   categories: PropTypes.array.isRequired
-// };
+Columns.propTypes = { 
+  layoutIsHorz: PropTypes.bool.isRequired,
+  userInput: PropTypes.string.isRequired,
+  cards: PropTypes.array.isRequired,
+  addCard: PropTypes.func.isRequired,
+  handleCommentChange: PropTypes.func.isRequired,
+  submitCard: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
+  editCard: PropTypes.func.isRequired,
+  deleteCard: PropTypes.func.isRequired,
+  shiftCard: PropTypes.func.isRequired,
+  thumbsCounter: PropTypes.func.isRequired
+};
 
 export default Columns

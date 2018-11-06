@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 function Header(props) {
@@ -24,5 +24,10 @@ function Header(props) {
     </nav>
   )
 }
+
+Header.propTypes = { 
+  layoutIsHorz: PropTypes.bool.isRequired,
+  toggleLayout: PropTypes.func.isRequired
+};
 
 export default Header
