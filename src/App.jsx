@@ -14,53 +14,28 @@ class App extends Component {
     idCount: 1
   }
 
-  // -- adds a new active card to the bottom of a category  --
+  // -- adds a new active card to the bottom of a category - WITHOUT TRY CATCH BLOCK --
   addCard = (currentCategory) => {
     this.setState((state) => {
-      try { 
-        if (state.cards.filter(card => card.isActive)[0]) { // throws an error if an active card already exists
-          throw new Error("Please submit or close the active card before adding another card.");
-        }
+      if (state.cards.filter(card => card.isActive)[0]) { // issues an alert if an active card already exists
+        alert("Please submit or close the active card before adding another card.");
+      } else {
         let cards = state.cards;
         cards.push({ category: currentCategory, text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: state.idCount });
         return {
           cards,
           idCount: ++state.idCount // prepares an ID for the next new card
-        }
-      } catch(err) {
-        alert(err.message);
-      }
+        }}
     });
   }
-
-  //SIMPLIFIED WITH TRY-CATCH BLOCK
-  // addCard = (currentCategory) => {
-  //   try { 
-  //     if (currentCategory) {
-  //       throw new Error("darn");
-  //     }
-  //     return;
-  //   } catch(err) {
-  //     return err;
-  //   }
-  // }
-  
-  //SIMPLIFIED WITHOUT TRY-CATCH BLOCK
-  // addCard = (currentCategory) => {
-  //   if (currentCategory) {
-  //     throw new Error("darn");
-  //   }
-  //   return;
-  // }
 
   // -- submits newly created card upon pressing the Submit button  --
   submitCard = (e, card) => {
     e.preventDefault();
     this.setState((state) => {
-      try {
-        if (!state.userInput) { // throws an error if comment box is empty
-          throw new Error("You must enter a valid Comment.");
-        }
+      if (!state.userInput) { // issues an alert if comment box is empty
+        alert("You must enter a valid comment.");
+      } else {
         let cards = state.cards;
         let index = cards.indexOf(card);
         card.text = state.userInput; // sets card's text value to current userInput
@@ -70,8 +45,6 @@ class App extends Component {
           cards,
           userInput: "" // resets userInput to an empty string in preparation for the next new card
         };
-      } catch(err) {
-        return alert(err);
       }
     });
   }
@@ -84,10 +57,9 @@ class App extends Component {
   // -- edits a card's comment  --
   editCard = (id) => {
     this.setState((state) => {
-      try { 
-        if (state.cards.filter(card => card.isActive)[0]) { // throws an error if an active card already exists
-          throw new Error("Please submit or close the active card before editing another card.");
-        }
+      if (state.cards.filter(card => card.isActive)[0]) { // issues an alert if an active card already exists
+        alert("Please submit or close the active card before editing another card.");
+      } else {
         let userInput;
         return {                          
           cards: state.cards.map(card => {  
@@ -97,8 +69,6 @@ class App extends Component {
           }),
           userInput
         }
-      } catch(err) {
-        return alert(err);
       }
     });
   }

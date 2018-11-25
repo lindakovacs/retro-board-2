@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { spy } from 'sinon';
+import { stub } from 'sinon';
 import App from './App';
 
 describe('App component', () => {
@@ -24,21 +24,15 @@ describe('App component', () => {
     expect(columns.props().cards).to.deep.equal([{category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1}]);
     expect(wrapper.state().idCount).to.equal(2);
   });
-  it("throws an error and issues an alert message if another card is already active", () => {
-    const alertSpy = spy(window, 'alert');
+  it("issues an alert message if another card is already active and doesn't add a second card", () => {
+    const alertSpy = stub(window, 'alert');
     const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
     wrapper.setState({ cards: [card], userInput: "test" });
     let columns = wrapper.find('Columns');
-    const err = columns.props().addCard("went-well");
-    expect(err).to.equal(undefined);
+    columns.props().addCard("went-well");
+    alertSpy.restore();
     expect(alertSpy.calledOnceWith("Please submit or close the active card before adding another card.")).to.equal(true);
-  });
-  it("throws an error if another card is already active", () => {
-    const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
-    wrapper.setState({ cards: [card], userInput: "test" });
-    let columns = wrapper.find('Columns');
-    const addCardFunc = columns.props().addCard;
-    expect(() => addCardFunc("went-well")).to.throw();
+    expect(wrapper.state().cards.length).to.equal(1);
   });
 
   // tests submitCard
@@ -51,6 +45,17 @@ describe('App component', () => {
     columns = wrapper.update().find('Columns');
     expect(columns.props().cards).to.deep.equal([{category: "went-well", text: "test", thumbsUp: 0, thumbsDown: 0, isActive: false, id: 1}]);
     expect(columns.props().userInput).to.equal("");
+  });
+  it("issues an alert message if the user didn't input any text upon submission and doesn't make the card inactive", () => {
+    const e = { preventDefault: () => {} };
+    const alertSpy = stub(window, 'alert');
+    const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
+    wrapper.setState({ cards: [card]});
+    let columns = wrapper.find('Columns');
+    columns.props().submitCard(e, columns.props().cards[0]);
+    alertSpy.restore();
+    expect(alertSpy.calledOnceWith("You must enter a valid comment.")).to.equal(true);
+    expect(wrapper.state().cards[0].isActive).to.equal(true);
   });
 
   // tests handleKeyDown
@@ -74,6 +79,16 @@ describe('App component', () => {
     columns = wrapper.update().find('Columns');
     expect(columns.props().cards).to.deep.equal([{category: "went-well", text: "test", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1}]);
     expect(columns.props().userInput).to.equal("test");
+  });
+  it("issues an alert message if another card is already active, and doesn't activate a second card", () => {
+    const alertSpy = stub(window, 'alert');
+    const card = {category: "went-well", text: "", thumbsUp: 0, thumbsDown: 0, isActive: true, id: 1};
+    wrapper.setState({ cards: [card], userInput: "test" });
+    let columns = wrapper.find('Columns');
+    columns.props().editCard(1);
+    alertSpy.restore();
+    expect(alertSpy.calledOnceWith("Please submit or close the active card before editing another card.")).to.equal(true);
+    expect(wrapper.state().cards.length).to.equal(1);
   });
 
   // tests handleCommentChange

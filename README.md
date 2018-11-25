@@ -27,8 +27,7 @@ Alternatively you can use `npm install` and `npm start` to start the app.
 
 `./App.test.js` `.Header.test.js` `.Columns.test.js` `.Cards.test.js` 
 
-To run all tests, cd into the repo and type:
-`npm run test`
+To run all tests, cd into the repo and type `npm run test` followed by `a`
 
 ## Author
 
