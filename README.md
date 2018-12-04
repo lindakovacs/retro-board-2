@@ -1,8 +1,10 @@
 # Retro Board App
 
-This app is designed for use within the retrospective phase of an app's development workflow. Team members will use this board to reflect on what went well and what they need to improve on for next time. Users can create, edit and delete cards, give "thumbs up" or thumbs down" to existing cards, and shift cards to adjacent categories. Inspired by the [FunRetro retrospective board](https://funretro.io) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+This app is designed for use within the retrospective phase of an app's development workflow. Team members will use this board to reflect on what went well and what they need to improve on for next time. Users can create, edit and delete cards, give "thumbs up" or thumbs down" to existing cards, and shift cards to adjacent categories. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Sample Retro Board with comment cards filled out](./screenshots/retro-board-sg.jpg?raw=true "Retro Board")
+
+ Inspired by the [FunRetro retrospective board](https://funretro.io) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 ## Getting Started
 

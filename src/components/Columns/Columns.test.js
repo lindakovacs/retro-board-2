@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import { expect } from "chai";
 import { spy } from "sinon";
 import Columns from "./Columns";
-import Cards from "../Cards/Cards";
 
 describe("Columns component", () => {
   let wrapper;
