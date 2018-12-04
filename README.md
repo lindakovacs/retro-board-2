@@ -8,7 +8,7 @@ This app is designed for use within the retrospective phase of an app's developm
 
 ## Getting Started
 
-These instructions will get a copy of the project up and running on your local machine for development and testing purposes. For more information about the React framework please vist https://reactjs.org/docs/getting-started.html
+These instructions will get a copy of the project up and running on your local machine for development and testing purposes. For more information about the React framework please vist [Reactjs.org](https://reactjs.org/docs/getting-started.html).
 
 ### Prerequisites
 
