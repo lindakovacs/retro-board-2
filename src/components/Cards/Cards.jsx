@@ -90,10 +90,8 @@ function Cards(props) {
 Cards.propTypes = { 
   category: PropTypes.string.isRequired,
   categories: PropTypes.array.isRequired,
-  layoutIsHorz: PropTypes.bool.isRequired,
   userInput: PropTypes.string.isRequired,
   cards: PropTypes.array.isRequired,
-  addCard: PropTypes.func.isRequired,
   handleCommentChange: PropTypes.func.isRequired,
   submitCard: PropTypes.func.isRequired,
   handleKeyDown: PropTypes.func.isRequired,

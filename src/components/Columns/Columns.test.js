@@ -7,8 +7,26 @@ import Cards from "../Cards/Cards";
 
 describe("Columns component", () => {
   let wrapper;
+  const dummySpy = spy();
   beforeEach(() => {
-    wrapper = shallow(<Columns layoutIsHorz={true} addCard={addSpy} />);
+    wrapper = shallow(
+    <Columns 
+      layoutIsHorz={true} 
+      addCard={addSpy} 
+      categories={["went-well", "to-improve", "action-items"]}
+      category="went-well"
+      cards={[{category: "went-well", text: "test", thumbsUp: 0, thumbsDown: 0, isActive: false, id: 1}]}
+      userInput="user input test"
+      idCount={1}
+      deleteCard={dummySpy}
+      editCard={dummySpy}
+      thumbsCounter={dummySpy}
+      shiftCard={dummySpy}
+      handleCommentChange={dummySpy}
+      handleKeyDown={dummySpy}
+      submitCard={dummySpy} 
+      />
+      );
   });
 
   // Tests for accurate rendering of three columns when layout is horizontal
@@ -27,21 +45,12 @@ describe("Columns component", () => {
   });
 
   // Tests for accurate rendering of one column
-  it("renders a column header with title and 'add' button", () => {
-    const column1 = wrapper.find(".went-well");
-    expect(
-      column1.containsAllMatchingElements([
-        <div className="column-3 went-well">
-          <h3>Went Well</h3>
-          <button className="btn-add-card">
-            <span>
-              <b>+</b>
-            </span>
-          </button>
-          <Cards />
-        </div>
-      ])
-    ).to.equal(true);
+  it("renders correct titles for all three columns", () => {
+    const titles = wrapper.find("h3");
+    expect(titles).to.have.lengthOf(3);
+    expect(titles.at(0).text()).to.equal("Went Well");
+    expect(titles.at(1).text()).to.equal("To Improve");
+    expect(titles.at(2).text()).to.equal("Action Items");
   });
 
   // Calls the intended callback function for add card button

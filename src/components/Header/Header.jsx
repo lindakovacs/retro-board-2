@@ -10,13 +10,11 @@ function Header(props) {
         <div className="layout">
           <h5>Layout</h5>
           <i 
-            className={`fa fa-bars${props.layoutIsHorz ? " active" : ""}`} 
-            id="layout-horz" 
+            className={`fa fa-bars${props.layoutIsHorz ? "" : " active"}`}
             onClick={() => props.toggleLayout()}
           ></i>
           <i 
-            className={`fa fa-bars layout-vert${props.layoutIsHorz ? "" : " active"}`} 
-            id="layout-vert" 
+            className={`fa fa-bars layout-horz${props.layoutIsHorz ? " active" : ""}`}
             onClick={() => props.toggleLayout()}
           ></i>
         </div>

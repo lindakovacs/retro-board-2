@@ -40,16 +40,7 @@ function Columns(props) {
 
 Columns.propTypes = { 
   layoutIsHorz: PropTypes.bool.isRequired,
-  userInput: PropTypes.string.isRequired,
-  cards: PropTypes.array.isRequired,
-  addCard: PropTypes.func.isRequired,
-  handleCommentChange: PropTypes.func.isRequired,
-  submitCard: PropTypes.func.isRequired,
-  handleKeyDown: PropTypes.func.isRequired,
-  editCard: PropTypes.func.isRequired,
-  deleteCard: PropTypes.func.isRequired,
-  shiftCard: PropTypes.func.isRequired,
-  thumbsCounter: PropTypes.func.isRequired
+  addCard: PropTypes.func.isRequired
 };
 
 export default Columns
